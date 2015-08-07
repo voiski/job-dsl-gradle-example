@@ -1,26 +1,7 @@
-def createListView(context, name) {
+def createListView(context, String name) {
     context.with {
-        listView(name) {
-            jobs {
-                regex 'xxx'
-            }
-            columns {
-                status()
-                weather()
-                delegate.name()
-                lastSuccess()
-                lastFailure()
-                lastDuration()
-                buildButton()
-            }
-        }
+        job(name) {}
     }
 }
 
-nestedView('Overview') {
-    views {
-        createListView delegate, 'xx', 'xx'
-    }
-}
-
-createListView this, 'yy', 'yy'
+createListView this, 'yy'
